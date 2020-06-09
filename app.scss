@@ -1,0 +1,91 @@
+@use "@material/theme" with (
+  $primary: #fcb8ab,
+  $secondary: #feeae6,
+  $on-primary: #442b2d,
+  $on-secondary: #442b2d,
+);
+
+@use '@material/card';
+@use '@material/button';
+@use "@material/icon-button";
+@use '@material/button/mdc-button';
+@use "@material/elevation/mdc-elevation";
+@use "@material/typography/mdc-typography";
+
+@import "@material/card/mixins";
+@import "@material/theme/mixins";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+@include icon-button.core-styles;
+@include card.core-styles;
+
+.content{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-card__primary {
+  padding: 1rem;
+}
+
+.my-card__secondary {
+  @include mdc-theme-prop(color, text-secondary-on-background);
+
+  padding: 1rem 1rem 8px 1rem;
+}
+
+.my-card__media-content {
+  display: flex;
+  align-items: flex-end;
+  
+  .my-card__subtitle {
+    @include mdc-theme-prop(color, text-secondary-on-background);
+  }
+  
+  .my-card__title,
+  .my-card__subtitle {
+    @include mdc-theme-prop(color, white);
+    margin: 0;
+  }
+}
+
+.my-card__header {
+  align-items: center;
+  display: flex;
+  height: 52px;
+  padding:16px;
+}
+
+.my-card {
+  width: 400px;
+  margin: 48px 0;
+}
+
+.my-card__media {
+  background-image: url('assets/img/banner.jpg');
+  height: 267px;
+  overflow: hidden;
+  padding: 0
+}
+
+.mdc-card__media .material-image {
+  top: 64px;
+  position: relative;
+}
+
+.my-card__avatar {
+  height: 40px;
+  width: 40px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-image: url('assets/img/jan.jpg');
+  background-size: 40px;
+}
+
+html, body { height: 100%; }
+body { 
+  background-color: #F7F7F7;
+  margin: 0; 
+}
